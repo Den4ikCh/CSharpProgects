@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Net.NetworkInformation;
-using System.Security.Cryptography.X509Certificates;
+using System.Collections.Generic;
 
 class Program
 {
@@ -28,19 +27,15 @@ class Program
         }
         int x = achars.Length;
         int y = bchars.Length;
-        int max = 0;
-        int min = 0;
         char NameMax = '0';
-        if (x < y)
+        int min = (int)MathF.Max(x, y);
+        int max = (int)MathF.Max(x, y);
+        if (max == y)
         {
-            max = y;
-            min = x;
             NameMax = 'b';
         }
         else
         {
-            max = x;
-            min = y;
             NameMax = 'a';
         }
         int[] resints = new int[max];
